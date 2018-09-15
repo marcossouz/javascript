@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pagina JS</title>
+	<script type="text/javascript">
+		function time(){
+			var x = document.getElementById('demo');
+			x.innerHTML = "<br><br>" + Date();
+		}
+
+		function luz(){
+
+			var x = document.getElementById('myImage');
+
+			if(x.src == 'file:///C:/ihc/img/apagada.gif'){
+				x.src = 'file:///C:/ihc/img/acesa.gif';
+			} else {
+				x.src = 'file:///C:/ihc/img/apagada.gif';
+			}
+		}
+
+		function mudarTamanhoFonte(){
+			var x = document.getElementById('font');
+
+			if(x.style.fontSize == '20px'){
+				x.style.fontSize = "35px";
+			} else {
+				x.style.fontSize = "20px";
+			}
+		}
+
+		function ocultarText(){
+			var x = document.getElementById('ocut');
+
+			if(x.style.display == 'none'){
+				x.style.display = 'inherit';
+			} else {
+				x.style.display = 'none';
+			}
+		}
+
+
+	</script>
+</head>
+<body>
+	<button type="button" onclick="time()">Click me to display</button>
+	<div id="demo" ></div>
+
+	<br><br><br>
+	<!-- <button onclick="luz()">Interruptor</button> -->
+	<a onclick="luz()"><img id="myImage" src="img/apagada.gif" style="width: 100px;"></a>
+
+	<br><br>
+	<button type="button" onclick="mudarTamanhoFonte()">Mudar Fonte</button>
+	<br><br>
+	<h1 id="font" style="font-size: 20px;">Teste de fonte</h1>
+
+	<br><br>
+	<button type="button" onclick="ocultarText()">Ocultar text</button>
+	<br><br>
+	<h1 id="ocut" style="font-size: 20px;">Texto para esconder</h1>
+</body>
+</html>
