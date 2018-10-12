@@ -172,4 +172,34 @@ var z = 0;
      if(z++ > 7) break;
  }
 
- 
+ var txt = "1. The Shawshank Redemption\n2. The Godfather\n3. The Godfather: Part II\n4. Pulp Fiction\n5. The Good, the Bad and the Ugly" +
+"\n6. 12 Angry Men\n7. Schindler’s List\n8. The Dark Knight\n9. The Lord of the Rings: The Return of the King\n10. Fight Club" +
+"\n11. Star Wars: Episode V - The Empire Strikes Back\n12. One Flew Over the Cuckoo’s Nest\n13. The Lord of the Rings: The Fellowship of the Ring";
+function createArr(text){
+    var arr = text.split("\n");
+    // for(var i = 0; i < arr.length; ++i){
+    //     arr[i] = arr[i].trim();
+    // }
+    return arr;
+}
+
+function displayList(list){
+    for(list.front(); list.currPos() < list.length(); list.next()){
+        console.log(list.getElement());
+    }
+}
+
+// console.log(createArr(txt));
+
+var movies = createArr(txt);
+// console.log(movies);
+
+ var movieList = new List();
+
+ for(var i = 0; i < movies.length; ++i){
+    movieList.append(movies[i]);
+ }
+
+console.log(movieList.toString());
+
+displayList(movieList);
