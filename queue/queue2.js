@@ -87,7 +87,7 @@ for(var i = 0; i < 10; ++i){
 
 var nums = [];
 for(var i = 0; i < 10; ++i){
-    nums[i] = Math.floor(Math.random() * 101);
+    nums[i] = Math.floor(Math.random() * 100);
 }
 
 console.log("Before radix sort: ");
