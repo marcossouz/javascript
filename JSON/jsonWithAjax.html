@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Json with Ajax</title>
+    </head>
+    <body>
+        <p id="demo"></p>
+
+        <p>Arquivo txt com json</p>
+        <div id="demo2"></div>
+
+        <script>
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && xmlhttp.status == 200){
+                    var myObj = JSON.parse(this.responseText);
+                    document.getElementById("demo").innerHTML = "name: " + myObj.name + ", " + myObj.pets[0].animal + " : " + myObj.pets[0].name;
+                    document.getElementById("demo2").innerHTML = "<pre>"  + this.responseText + "</pre>";
+                }
+            };
+
+            xmlhttp.open("GET", "json.txt", true);
+            xmlhttp.send();
+        </script>
+    </body>
+</html>
