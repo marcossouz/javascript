@@ -30,21 +30,21 @@ function showAll(){
 }
 function count(){
     var n = 0;
-    Object.keys(this.dataStore).forEach(function(){
+    for(var key in this.dataStore){
         ++n;
-    });
+    }
     return n;
 }
-function clear(obj){
-    Object.keys(this.dataStore).forEach(function(key){
-        obj.remove(key);
-    })
+function clear(){
+   for(var key in this.dataStore){
+        this.remove(key);
+   }
 }
 
 //testes
 var pbook = new Dictionary();
 
-pbook.add("Mike", "123");
+pbook.add("Mike ", "123");
 pbook.add("David","345");
 pbook.add("Cynthia", "456");
 pbook.showAll();
@@ -59,5 +59,5 @@ pbook.add("Marcos", "456");
 console.log("Number of entries: " + pbook.count());
 console.log("Marcos is extension: " + pbook.find("Marcos"));
 pbook.showAll();
-pbook.clear(pbook);
+pbook.clear();
 console.log("Number of entries: " + pbook.count());
